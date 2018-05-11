@@ -54,6 +54,7 @@ LABEL org.label-schema.usage="https://www.zabbix.com/documentation/${MAJOR_VERSI
 
 RUN apt-get ${APT_FLAGS_COMMON} update && \
     apt-get ${APT_FLAGS_DEV} install \
+			uuid-runtime \
             autoconf \
             automake \
             libc6-dev \
@@ -90,7 +91,8 @@ RUN apt-get ${APT_FLAGS_COMMON} update && \
     cd /tmp/ && \
     rm -rf /tmp/zabbix-${ZBX_VERSION}/ && \
     apt-get ${APT_FLAGS_COMMON} purge \
-            autoconf \
+            uuid-runtime \
+			autoconf \
             automake \
             libc6-dev \
             libpcre3-dev \
